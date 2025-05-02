@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Todo } from '../types/Todo';
 import { TodoItem } from './TodoItem';
 
@@ -20,23 +21,23 @@ export const TodosList: React.FC<Props> = ({
     <section className="todoapp__main" data-cy="TodoList">
       {isLoadingAll
         ? todos.map(todo => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              handleDeletTodo={handleDeletTodo}
-              handleChecked={handleChecked}
-              loadingIds={todos.map(currentTodo => currentTodo.id)}
-            />
-          ))
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            handleDeletTodo={handleDeletTodo}
+            handleChecked={handleChecked}
+            loadingIds={todos.map(currentTodo => currentTodo.id)}
+          />
+        ))
         : todos.map(todo => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              handleDeletTodo={handleDeletTodo}
-              handleChecked={handleChecked}
-              loadingIds={loadingIds}
-            />
-          ))}
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            handleDeletTodo={handleDeletTodo}
+            handleChecked={handleChecked}
+            loadingIds={loadingIds}
+          />
+        ))}
     </section>
   );
 };
